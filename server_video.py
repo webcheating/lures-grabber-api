@@ -54,11 +54,11 @@ def upload_file():
     if file.mimetype not in ['image/png', 'video/webm']:
         return jsonify({'error': 'Invalid file type'}), 400
 
-    # Генерируем уникальное имя файла
+    # change filename
     filename_png = get_next_png_filename('uploads')
     filename_webm = get_next_webm_filename('uploads')
     
-    # Добавляем соответствующее расширение в зависимости от типа файла
+    # change filename
     if file.mimetype == 'image/png':
         filename = get_next_png_filename('uploads')
     elif file.mimetype == 'video/webm':
